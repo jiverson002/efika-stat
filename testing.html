@@ -1,0 +1,53 @@
+<html>
+<head>
+  <link rel="stylesheet" href="CSS/testing.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+
+  <h1 align="center">
+    Please Input your Data Points
+  </h1>
+  <p align="center">
+    <a href="example.html">
+      For an example of how to format your input, click here
+    </a>
+  </p>
+
+  <table width="100%">
+    <tr>
+      <td width="100%" align="center">
+
+        <form>
+          <table>
+            <tr>
+              <td>
+                <p>Title: </p><textarea rows="1" cols="30" id="title" name="title"></textarea><br>
+                <p>X-Axis: </p><textarea rows="1" cols="30" id="xaxis" name="xaxis"></textarea><br>
+                <p>Y-Axis: </p><textarea rows="1" cols="30" id="yaxis" name="yaxis"></textarea><br>
+                <p>X Values: </p><textarea rows="1" cols="30" id="xvals" name="xvals"></textarea><br>
+                <p>Y Values: </p><textarea rows="1" cols="30" id="yvals" name="yvals"></textarea><br>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <input type="button" value="Submit" onclick="getData();"/>
+                <input type="Reset" value="Reset" onclick="resetData();">
+              </td>
+            </tr>
+          </table>
+        </form>
+
+      </td>
+    </tr>
+  </table>
+
+<span align="center">
+<div id="tester" style="margin:auto;width:600px;height:250px;"></div>
+</span>
+
+<script src="JS/testing.js"></script>
+
+</body>
+</html>
