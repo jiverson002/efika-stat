@@ -1,3 +1,27 @@
+function readJSON('JSON/data.json') {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'JSON/data.json', true);
+    xhr.responseType = 'blob';
+    xhr.onload = function(e) {
+      if (this.status == 200) {
+          var file = new File([this.response], 'temp');
+          var fileReader = new FileReader();
+          fileReader.addEventListener('load', function(){
+               //do stuff with fileReader.result
+          });
+          fileReader.readAsText(file);
+      }
+    }
+    xhr.send();
+}
+
+console.log(data.title);
+console.log(data.xaxis);
+console.log(data.yaxis);
+console.log(data.xvals[0]);
+console.log(data.yvals[0]);
+
+
 var title = null;
 var xaxis = null;
 var yaxis = null;
