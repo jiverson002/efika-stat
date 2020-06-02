@@ -1,21 +1,33 @@
 //var data = JSON.parse(JSON/data.js);
-//console.log(data);
-//console.log(data.xaxis);
-//console.log(data.yaxis);
-//console.log(data.xvals[0]);
-//console.log(data.yvals[0]);
 
-import data from "/home/iwilson001/SummerResearch/JSON_graphing/JSON/data.json";
-var mydata = JSON.parse(data);
-console.log(data);
+//This is the JSON object where the graph  will receive all of its data
+var data = {"title": "Graph of Speed Over Time",
+  "xaxis": "Time",
+  "yaxis": "Speed",
+  "xvals": [1, 2, 3, 4, 5, 6],
+  "yvals": [60, 48, 33, 37, 26, 12] };
 
-var title = null;
-var xaxis = null;
-var yaxis = null;
-var xvals = new Array();
-var yvals = new Array();
+
+/*
+  This was for testing purposes only and can be removed
+
+  console.log(data.title);
+  console.log(data.xaxis);
+  console.log(data.yaxis);
+  console.log(data.xvals[0]);
+  console.log(data.yvals[0]);
+*/
+var title = data.title;
+var xaxis = data.xaxis;
+var yaxis = data.yaxis;
+var xvals = data.xvals;
+var yvals = data.yvals;
 
 function getData() {
+
+  /*
+  This is old code to make the graph using text boxes
+
   title = document.getElementById("title").value;
   xaxis = document.getElementById("xaxis").value;
   yaxis = document.getElementById("yaxis").value;
@@ -41,7 +53,7 @@ function getData() {
     yvals.push(Number(newVal));
     newVal = "";
   }
-
+*/
 var layout = {
 title: title,
 xaxis: {
