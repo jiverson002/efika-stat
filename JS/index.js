@@ -5,6 +5,10 @@ var data = {"title": "Graph of Speed Over Time",
   "xvals": [1, 2, 3, 4, 5, 6],
   "yvals": [60, 48, 33, 37, 26, 12] };
 
+  fetch( 'http://localhost:8080/JSON_Server/data.json' )
+  .then( resp => resp.json() )
+  .then( json => {console.log(json.title)});
+
 var title = data.title;
 var xaxis = data.xaxis;
 var yaxis = data.yaxis;
