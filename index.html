@@ -1,20 +1,19 @@
 <html>
 <head>
   <link rel="stylesheet" href="CSS/testing.css">
+  <link rel="import" href="./JSON/data.json">
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-
-  <h1 align="center">
-    Please Input your Data Points
-  </h1>
+  <div id="app">
+    {{ info }}
+  </div>
   <p align="center">
     <a href="example.html">
       For an example of how to format your input, click here
     </a>
   </p>
-
   <table width="100%">
     <tr>
       <td width="100%" align="center">
@@ -35,11 +34,10 @@
   </table>
 
 <span align="center">
-<div id="tester" style="margin:auto;width:600px;height:250px;"></div>
+<div id="myDiv" style="margin:auto;width:600px;height:250px;"></div>
 </span>
 
 <script type="text/javascript" src="JS/index.js"></script>
-<script type="text/javascript" src="JS/Vue.js"></script>
 
 </body>
 </html>
