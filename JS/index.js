@@ -54,6 +54,7 @@ function getData() {
 var config = {responsive: true}
 
   Plotly.newPlot('myDiv', graph, layout, config);
+
 }
 
 function resetData(){
