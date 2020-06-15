@@ -4,8 +4,7 @@ var data = null;
 var title = null;
 var xaxis = null;
 var yaxis = null;
-var xvals = null;
-var yvals = null;
+var traces = null;
 
 fetch('https://gist.githubusercontent.com/iwilson001/295fce39e79e828be028489a4c3b43bd/raw/a7777a7f31f88cb625bc6f0eb836276334794b8e/data.json')
 .then(function(response) {
@@ -21,8 +20,7 @@ fetch('https://gist.githubusercontent.com/iwilson001/295fce39e79e828be028489a4c3
   title = data.title;
   xaxis = data.xaxis;
   yaxis = data.yaxis;
-  xvals = data.xvals;
-  yvals = data.yvals;
+  traces = data.traces;
 })
 .catch(function(error) {
   console.log('Looks like there was a problem: \n', error);
@@ -60,3 +58,58 @@ var config = {responsive: true}
 function resetData(){
   Plotly.purge("tester");
 }
+
+Vue.component("reactive-chart", {
+  //receives chart object from Vue instance
+  props: ["chart"],
+  //binds the uuid of chart??
+  template: '<div :ref="chart.uuid"></div>',
+  mounted() {
+    //plots the plotly graph
+    Plotly.plot(this.$refs[this.chart.uuid], this.chart.traces, this.chart.layout, this.chart.config);
+  },
+  //watches for changes in the chart
+  watch: {
+    // this is the chart object to watch
+    chart: {
+      handler: function() {
+        //this will change the graph with the updated data
+        Plotly.react(
+          this.$refs[this.chart.uuid],
+          this.chart.traces,
+          this.chart.layout
+        );
+      },
+      //makes this work with the inside objects layout and traces
+      deep: true
+    }
+  }
+});
+
+var app = new Vue({
+el: "#app",
+data() {
+    return {
+      chart: {
+
+        uuid: "123",
+
+        traces: traces,
+        layout: {
+          title: title,
+          xaxis: {
+            title: xaxis,
+          },
+          yaxis: {
+            title: yaxis,
+          }
+        },
+
+        config: {
+          responsive: true
+        }
+
+      }
+    };
+  }
+});
