@@ -9,17 +9,12 @@
   <h1 align="center">
     Efika-Stat
   </h1>
+  <div id="app">
+    <button @click="editData()">Edit the data</button>
+    <reactive-chart :chart="chart"></reactive-chart>
+  </div>
 
-<div id="app">
-<reactive-chart :chart="chart"></reactive-chart>
-</div>
-
-<!--
-<span align="center">
-<div id="myDiv"></div>
-</span>
--->
-<script type="text/javascript" src="JS/index.js"></script>
+  <script type="text/javascript" src="JS/index.js"></script>
 
 </body>
 </html>
