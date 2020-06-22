@@ -3,9 +3,8 @@ Vue.component("reactive-chart", {
 
   template: `
   <div>
-    <div>
-      <button @click="addData()">add data</button>
-    </div>
+    <input type="text" id="JSONfile" value="Enter a Valid URL" size="100"/>
+    <button type="submit" v-on:click="createGraph">Submit</button>
     <div :ref="chart.uuid">
     </div>
   </div>`,
@@ -21,9 +20,28 @@ Vue.component("reactive-chart", {
   },
 
   methods: {
-    addData: function() {
-      this.chart.layout.datarevision = new Date().getTime();
-      this.chart.traces[0].y.push(Math.random());
+    createGraph: function() {
+      fetch (document.getElementById("JSONfile").value)
+        .then(response => response.json())
+        .then(json => {
+          var layout = "";
+          var traces = "";
+          layout = {
+            title:json.title,
+            xaxis: {
+              title: json.xaxis
+            },
+            yaxis: {
+              title: json.yaxis
+            }
+          };
+         traces = json.traces;
+          Plotly.react(
+            this.$refs[this.chart.uuid],
+            traces,
+            layout
+          );
+        })
     }
   },
 
@@ -44,22 +62,16 @@ Vue.component("reactive-chart", {
     fetch (this.url)
       .then(response => response.json())
       .then(json => {
-        this.chart.layouts = {
-          title:'reactive charts',
+        this.chart.layout = {
+          title:json.title,
           xaxis: {
-            title: 'xaxis title'
+            title: json.xaxis
           },
           yaxis: {
-            title: 'yaxis title'
+            title: json.yaxis
           }
         };
         this.chart.traces = json.traces;
-        this.chart.traces.forEach(trace => {
-          trace['line'] = {
-            width: 4,
-            shape: "line"
-          }
-        });
       })
   },
 
