@@ -1,41 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <style>
-      .module {
-        padding: 20px;
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <style>
+  .module {
+    padding: 20px;
 
-        .chart-container {
-          display: flex;
-          flex-direction: row;
-          height: 500px;
-        }
+    .chart-container {
+      display: flex;
+      flex-direction: row;
+      height: 500px;
+    }
 
-        input,
-        button,
-        .select,
-        select {
-          width: 100%;
-          margin-bottom: 10px;
-        }
-      }
-    </style>
-  </head>
+    input,
+    button,
+    .select,
+    select {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  </style>
+</head>
 
-  <body>
+<body>
 
-<div id="app">
-      <div class="chart-container">
-        <reactive-chart :url="url">
-        </reactive-chart>
-      </div>
+  <div id="app">
+    <div class="chart-container">
+      <reactive-chart :url="url">
+      </reactive-chart>
     </div>
+  </div>
 
-    <!-- TODO: find a way to include reactiveChart.js from app.js -->
-    <script src="JavaScript/reactiveChart.js"></script>
-    <script src="JavaScript/app.js"></script>
-  </body>
+  <!-- TODO: find a way to include reactiveChart.js from app.js -->
+  <script src="JavaScript/reactiveChart.js"></script>
+  <script src="JavaScript/app.js"></script>
+</body>
 </html>
