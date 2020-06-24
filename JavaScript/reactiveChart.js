@@ -29,6 +29,7 @@ Vue.component("reactive-chart", {
           layout = {
             title:json.title,
             xaxis: {
+              type: 'date',
               title: json.xaxis
             },
             yaxis: {
