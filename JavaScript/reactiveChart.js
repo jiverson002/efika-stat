@@ -3,8 +3,8 @@ Vue.component("reactive-chart", {
 
   template: `
   <div>
-    <input type="text" id="JSONfile" value="Enter a Valid URL" size="100"/>
-    <button type="submit" v-on:click="createGraph">Submit</button>
+    <input type="text" id="JSONfile" value="Enter a Valid URL" style="margin-right: auto;margin-left: auto; width: 88%;"/>
+    <button style="color: black;" type="submit" v-on:click="createGraph">Submit</button>
     <div :ref="chart.uuid">
     </div>
   </div>`,
