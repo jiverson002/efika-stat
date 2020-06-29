@@ -36,11 +36,13 @@ Vue.component("reactive-chart", {
               title: json.yaxis
             }
           };
+          var config = {responsive: true};
          traces = json.traces;
           Plotly.react(
             this.$refs[this.chart.uuid],
             traces,
-            layout
+            layout,
+            config
           );
         })
     }
@@ -52,7 +54,8 @@ Vue.component("reactive-chart", {
         Plotly.react(
           this.$refs[this.chart.uuid],
           this.chart.traces,
-          this.chart.layout
+          this.chart.layout,
+          this.chart.config
         );
       },
       deep: true
@@ -73,6 +76,7 @@ Vue.component("reactive-chart", {
           }
         };
         this.chart.traces = json.traces;
+        this.chart.config = {responsive: true};
       })
   },
 
@@ -80,7 +84,8 @@ Vue.component("reactive-chart", {
     Plotly.plot(
       this.$refs[this.chart.uuid],
       this.chart.traces,
-      this.chart.layout
+      this.chart.layout,
+      this.chart.config
     );
   }
 });
