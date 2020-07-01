@@ -3,10 +3,18 @@ Vue.component("reactive-chart", {
 
   template: `
   <div>
-    <input type="text" id="JSONfile" value="Enter a Valid URL" style="margin-right: auto;margin-left: auto; width: 88%;"/>
-    <button style="color: black;" type="submit" v-on:click="createGraph">Submit</button>
-    <div :ref="chart.uuid">
-    </div>
+  <table width="100%">
+  <tr>
+  <td width="100%">
+  <input type="text" id="JSONfile" value="Enter a Valid URL" style="color: black; margin-right: auto;margin-left: auto; width: 100%;"/>
+  </td>
+  <td width="80px">
+  <button style="color: black; width: 75px;" type="submit" v-on:click="createGraph">Submit</button>
+  </td>
+  </tr>
+  </table>
+  <div :ref="chart.uuid">
+  </div>
   </div>`,
 
   data: function() {
@@ -22,29 +30,29 @@ Vue.component("reactive-chart", {
   methods: {
     createGraph: function() {
       fetch (document.getElementById("JSONfile").value)
-        .then(response => response.json())
-        .then(json => {
-          var layout = "";
-          var traces = "";
-          layout = {
-            title:json.title,
-            xaxis: {
-              type: 'date',
-              title: json.xaxis
-            },
-            yaxis: {
-              title: json.yaxis
-            }
-          };
-          var config = {responsive: true};
-         traces = json.traces;
-          Plotly.react(
-            this.$refs[this.chart.uuid],
-            traces,
-            layout,
-            config
-          );
-        })
+      .then(response => response.json())
+      .then(json => {
+        var layout = "";
+        var traces = "";
+        layout = {
+          title:json.title,
+          xaxis: {
+            type: 'date',
+            title: json.xaxis
+          },
+          yaxis: {
+            title: json.yaxis
+          }
+        };
+        var config = {responsive: true};
+        traces = json.traces;
+        Plotly.react(
+          this.$refs[this.chart.uuid],
+          traces,
+          layout,
+          config
+        );
+      })
     }
   },
 
@@ -64,20 +72,20 @@ Vue.component("reactive-chart", {
 
   created() {
     fetch (this.url)
-      .then(response => response.json())
-      .then(json => {
-        this.chart.layout = {
-          title:json.title,
-          xaxis: {
-            title: json.xaxis
-          },
-          yaxis: {
-            title: json.yaxis
-          }
-        };
-        this.chart.traces = json.traces;
-        this.chart.config = {responsive: true};
-      })
+    .then(response => response.json())
+    .then(json => {
+      this.chart.layout = {
+        title:json.title,
+        xaxis: {
+          title: json.xaxis
+        },
+        yaxis: {
+          title: json.yaxis
+        }
+      };
+      this.chart.traces = json.traces;
+      this.chart.config = {responsive: true};
+    })
   },
 
   mounted() {
