@@ -56,6 +56,12 @@
                     {
                       "x":["(Date 1)", "(Date 2)"],
                       "y":["(y value here)", "(y value here)"],
+                      error_y": {
+                        "type": "data",
+                        "symmetric": false,
+                        "array": [(positive error), (positive error)],
+                        "arrayminus": [(negative error), (negative error)]
+                      },
                       "name":"(Name of first line)",
                       "type":"scatter",
                       "text": ["(text on point 1)", "(text on point 2)"]
@@ -63,6 +69,12 @@
                     {
                       "x":["(Date 1)", "(Date 2)"],
                       "y":["(y value here)", "(y value here)"],
+                      error_y": {
+                        "type": "data",
+                        "symmetric": false,
+                        "array": [(positive error), (positive error)],
+                        "arrayminus": [(negative error), (negative error)]
+                      },
                       "name":"(Name of second line)",
                       "type":"scatter",
                       "text": ["(text on point 1)", "(text on point 2)"]
@@ -84,13 +96,25 @@
                     {
                       "x":["2019-05-23", "2019-07-12", "2020-04-1", "2020-09-17"],
                       "y":[4, 8, 2, 9],
+                      "error_y": {
+                        "type": "data",
+                        "symmetric": false,
+                        "array": [0.1, 0.2, 0.1, 0.1],
+                        "arrayminus": [0.2, 0.4, 1, 0.2]
+                      },
                       "name":"Line 1",
                       "type":"scatter",
                       "text": ["Hash 1", "Hash 2", "Hash 3", "Hash 4"]
                     },
                     {
-                      "x":["2019-08-24", "2019-11-12", "2020-02-2", "2020-06-26"],
+                      "x":["2019-08-24", "2019-11-12", "2020-02-12", "2020-06-26"],
                       "y":[7, 8, 3, 6],
+                      "error_y": {
+                        "type": "data",
+                        "symmetric": false,
+                        "array": [0.3, 0.4, 0.1, 0.6],
+                        "arrayminus": [0.2, 0.3, 0.6, 0.2]
+                      },
                       "name":"Line 2",
                       "type":"scatter",
                       "text": ["Hash 1", "Hash 2", "Hash 3", "Hash 4"]
