@@ -99,13 +99,4 @@ Vue.component("reactive-chart", {
       deep: true
     }
   },
-
-  // mounted() {
-  //   Plotly.plot(
-  //     this.$refs[this.chart.uuid],
-  //     this.chart.traces,
-  //     this.chart.layout,
-  //     this.chart.config
-  //   );
-  // }
 });
