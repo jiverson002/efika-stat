@@ -16,143 +16,138 @@
 </head>
 
 <body>
-
-  <div class="site-wrapper">
-
-    <div class="site-wrapper-inner">
-
-      <div class="cover-container">
-
-        <div class="masthead clearfix">
-          <div class="inner">
-            <h3 class="masthead-brand"><a href="plot.html">Efika-Stat</a></h3>
-            <nav>
-              <ul class="nav masthead-nav">
-                <li><a href="plot.html">Home</a></li>
-                <li><a href="format.html">Formatting</a></li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-
-        <div class="inner cover">
-          <table>
-            <tr>
-              <td width="50%">
-                <h3>Here is a template for your JSON file Layout</h3><hr style="width: 80%;">
-              </td>
-              <td width="50%">
-                <h3>Here is an example of how your JSON file should look</h3><hr style="width: 80%;">
-              </td>
-            </tr>
-            <tr>
-              <td align="left">
-                <p style="white-space: pre-wrap; ">
-                  {
-                    "title": "(Your title here)",
-                    "xaxis": "(Your xaxis title here)",
-                    "yaxis": "(your yaxis title here)",
-                    "traces" : [
-                    {
-                      "x":["(Date 1)", "(Date 2)"],
-                      "y":["(y value here)", "(y value here)"],
-                      error_y": {
-                        "type": "data",
-                        "symmetric": false,
-                        "array": [(positive error), (positive error)],
-                        "arrayminus": [(negative error), (negative error)]
-                      },
-                      "name":"(Name of first line)",
-                      "type":"scatter",
-                      "text": ["(text on point 1)", "(text on point 2)"]
-                    },
-                    {
-                      "x":["(Date 1)", "(Date 2)"],
-                      "y":["(y value here)", "(y value here)"],
-                      error_y": {
-                        "type": "data",
-                        "symmetric": false,
-                        "array": [(positive error), (positive error)],
-                        "arrayminus": [(negative error), (negative error)]
-                      },
-                      "name":"(Name of second line)",
-                      "type":"scatter",
-                      "text": ["(text on point 1)", "(text on point 2)"]
-                    }
-                    ]
-                  }
-                </p>
-                <p>
-                  Note: Dates in the JSON file should be formatted as: YYYY-MM-DD
-                </p>
-              </td>
-              <td align="left">
-                <p style="white-space: pre-wrap; ">
-                  {
-                    "title": "Speed Over Days",
-                    "xaxis": "Day",
-                    "yaxis": "Speed",
-                    "traces" : [
-                    {
-                      "x":["2019-05-23", "2019-07-12", "2020-04-1", "2020-09-17"],
-                      "y":[4, 8, 2, 9],
-                      "error_y": {
-                        "type": "data",
-                        "symmetric": false,
-                        "array": [0.1, 0.2, 0.1, 0.1],
-                        "arrayminus": [0.2, 0.4, 1, 0.2]
-                      },
-                      "name":"Line 1",
-                      "type":"scatter",
-                      "text": ["Hash 1", "Hash 2", "Hash 3", "Hash 4"]
-                    },
-                    {
-                      "x":["2019-08-24", "2019-11-12", "2020-02-12", "2020-06-26"],
-                      "y":[7, 8, 3, 6],
-                      "error_y": {
-                        "type": "data",
-                        "symmetric": false,
-                        "array": [0.3, 0.4, 0.1, 0.6],
-                        "arrayminus": [0.2, 0.3, 0.6, 0.2]
-                      },
-                      "name":"Line 2",
-                      "type":"scatter",
-                      "text": ["Hash 1", "Hash 2", "Hash 3", "Hash 4"]
-                    }
-                    ]
-                  }
-                </p>
-              </td>
-            </tr>
-          </table>
-        </div>
-
-        <div class="mastfoot">
-          <div class="inner">
-            <p>
-              Page Template by <a href="https://twitter.com/mdo">@mdo</a>
-              &emsp;○&emsp;
-              <a href="https://github.com/jiverson002/efika-stat">
-                <img src="https://icon-library.com/images/github-icon-white/github-icon-white-6.jpg" style="height: 30px;width: 30px;">
-                Visit Our GitHub Repository
-              </a>
-            </p>
-          </div>
-        </div>
-
-      </div>
-
+  <div class="cover-container"
+  <div class="masthead clearfix">
+    <div class="inner navbar">
+      <h3 class="masthead-brand"><a href="plot.html">Efika-Stat</a></h3>
+      <nav>
+        <ul class="nav masthead-nav">
+          <li><a href="plot.html">Home</a></li>
+          <li><a href="format.html">Formatting</a></li>
+        </ul>
+      </nav>
     </div>
-
   </div>
 
-  <!-- Bootstrap core JavaScript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-  <!-- JavaScript Files Here -->
-  <!--TODO: find a way to include reactiveChart.js from app.js-->
-  <script src="JavaScript/reactiveChart.js"></script>
-  <script src="JavaScript/app.js"></script>
+  <div style="padding-top: 6%; padding-bottom: 2%;">
+    <table wdith="100%" align="center">
+      <tr>
+        <td width="50%">
+          <h3>Here is a template for your JSON file Layout</h3><hr style="width: 80%;">
+        </td>
+        <td width="50%">
+          <h3>Here is an example of how your JSON file should look</h3><hr style="width: 80%;">
+        </td>
+      </tr>
+      <tr>
+        <td align="left">
+          <p style="white-space: pre-wrap; ">
+            {
+              "title": "(Your title here)",
+              "xaxis": "(Your xaxis title here)",
+              "yaxis": "(your yaxis title here)",
+              "traces" : [
+              {
+                "x":["(Date 1)", "(Date 2)"],
+                "y":["(y value here)", "(y value here)"],
+                error_y": {
+                  "type": "data",
+                  "symmetric": false,
+                  "array": [(positive error), (positive error)],
+                  "arrayminus": [(negative error), (negative error)]
+                },
+                "name":"(Name of first line)",
+                "type":"scatter",
+                "text": ["(text on point 1)", "(text on point 2)"]
+              },
+              {
+                "x":["(Date 1)", "(Date 2)"],
+                "y":["(y value here)", "(y value here)"],
+                error_y": {
+                  "type": "data",
+                  "symmetric": false,
+                  "array": [(positive error), (positive error)],
+                  "arrayminus": [(negative error), (negative error)]
+                },
+                "name":"(Name of second line)",
+                "type":"scatter",
+                "text": ["(text on point 1)", "(text on point 2)"]
+              }
+              ]
+            }
+          </p>
+        </td>
+        <td align="left">
+          <p style="white-space: pre-wrap; ">
+            {
+              "title": "Speed Over Days",
+              "xaxis": "Day",
+              "yaxis": "Speed",
+              "traces" : [
+              {
+                "x":["2019-05-23", "2019-07-12", "2020-04-1", "2020-09-17"],
+                "y":[4, 8, 2, 9],
+                "error_y": {
+                  "type": "data",
+                  "symmetric": false,
+                  "array": [0.1, 0.2, 0.1, 0.1],
+                  "arrayminus": [0.2, 0.4, 1, 0.2]
+                },
+                "name":"Line 1",
+                "type":"scatter",
+                "text": ["Hash 1", "Hash 2", "Hash 3", "Hash 4"]
+              },
+              {
+                "x":["2019-08-24", "2019-11-12", "2020-02-12", "2020-06-26"],
+                "y":[7, 8, 3, 6],
+                "error_y": {
+                  "type": "data",
+                  "symmetric": false,
+                  "array": [0.3, 0.4, 0.1, 0.6],
+                  "arrayminus": [0.2, 0.3, 0.6, 0.2]
+                },
+                "name":"Line 2",
+                "type":"scatter",
+                "text": ["Hash 1", "Hash 2", "Hash 3", "Hash 4"]
+              }
+              ]
+            }
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td align="left">
+          <p>
+            Note: Dates in the JSON file should be formatted as: YYYY-MM-DD<br>
+            For info on multiple y-axis: <a href="https://plotly.com/javascript/multiple-axes/" style="color: #00BFFF;">Click Here</a>
+          </p>
+        </td>
+        <td>
+        </td>
+      </tr>
+    </table>
+</div>
+  <div class="mastfoot">
+    <div class="inner">
+      <p>
+        Page Template by <a href="https://twitter.com/mdo">@mdo</a>
+        &emsp;○&emsp;
+        <a href="https://github.com/jiverson002/efika-stat">
+          <img src="https://icon-library.com/images/github-icon-white/github-icon-white-6.jpg" style="height: 30px;width: 30px;">
+          Visit Our GitHub Repository
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+<!-- JavaScript Files Here -->
+
 </body>
+
+
 </html>
