@@ -35,16 +35,7 @@ Vue.component("reactive-chart", {
       .then(json => {
         var layout = "";
         var traces = "";
-        layout = {
-          title:json.title,
-          xaxis: {
-            type: 'date',
-            title: json.xaxis
-          },
-          yaxis: {
-            title: json.yaxis
-          }
-        };
+        layout = json.layout;
         var config = {responsive: true};
         traces = json.traces;
         if(document.getElementById("updateButton").style.display == "none"){
