@@ -27,7 +27,7 @@ Vue.component("reactive-chart", {
       }
     }
   },
-
+//Creates the chart or updates it depending on which button above is active
   methods: {
     createOrUpdateGraph: function() {
       fetch (document.getElementById("JSONfile").value)
@@ -49,7 +49,7 @@ Vue.component("reactive-chart", {
           document.getElementById("submitButton").style.display="none";
         }
         else{
-          Plotly.update(
+          Plotly.react(
             this.$refs[this.chart.uuid],
             traces,
             layout,
@@ -59,7 +59,7 @@ Vue.component("reactive-chart", {
       })
     }
   },
-
+//watches for changes to the charts current data
   watch: {
     chart: {
       handler: function() {

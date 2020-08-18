@@ -30,6 +30,8 @@ file.write(title + "\",\n")
 # Formatting and title for the x-axis
 file.write("\"xaxis\": {\n")
 file.write("\"type\": \"Date\",\n")
+file.write("\"tickangle\": \"15\",\n")
+file.write("\"nticks\": \"8\",\n")
 file.write("\"title\": \"")
 file.write(xaxisTitle + "\" \n")
 file.write("},\n")
