@@ -56,10 +56,10 @@ while i < 6:
     f = open(dataFile, "r")
     for x in f:
         if "@date:" in x:
-            # x[11:31], this does not include the timezone,
+            # x[11:31], this does not include the timezone, yyyy-mm-dd hh:mm:ss
             # this converts data to datetime and prints out to datafile in proper form
             my_date = datetime.datetime.strptime(x[7:31], "%c")
-            xvals.append(my_date.strftime("%Y") + "-" + my_date.strftime("%m") + "-" + my_date.strftime("%d") + " " + my_date.strftime("%X"))
+            xvals.append(my_date.strftime("%Y-%m-%d %X")) #+ "-" + my_date.strftime("%m") + "-" + my_date.strftime("%d") + " " + my_date.strftime("%X")
     f.seek(0)
     for x in xvals:
         if x == xvals[len(xvals) - 1]:
