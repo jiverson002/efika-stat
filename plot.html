@@ -1,41 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Reactive JSON file based graph using Plotly</title>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <style>
-  .module {
-    padding: 20px;
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
-    .chart-container {
-      display: flex;
-      flex-direction: row;
-      height: 500px;
-    }
-
-    input,
-    button,
-    .select,
-    select {
-      width: 100%;
-      margin-bottom: 10px;
-    }
-  }
-  </style>
+  <!-- Custom styles for this template -->
+  <link href="CSS/plot.css" rel="stylesheet">
 </head>
 
-<body>
+  <body>
+    <div class="cover-container"
+          <div class="masthead clearfix">
+            <div class="inner navbar">
+              <h3 class="masthead-brand"><a href="plot.html">Efika-Stat</a></h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li><a href="plot.html">Home</a></li>
+                  <li><a href="tooling.html">Tooling</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
 
-  <div id="app">
-    <div class="chart-container">
-      <reactive-chart :url="url">
-      </reactive-chart>
-    </div>
-  </div>
+          <div class="inner cover">
+              <div id="app" style="padding-top: 5%; padding-right: 10%; padding-left: 10%;">
+                  <reactive-chart :url="url">
+                  </reactive-chart>
+              </div>
+          </div>
 
-  <!-- TODO: find a way to include reactiveChart.js from app.js -->
-  <script src="JavaScript/reactiveChart.js"></script>
-  <script src="JavaScript/app.js"></script>
-</body>
+          <div class="mastfoot">
+            <div class="inner">
+              <p>
+                Page Template by <a href="https://twitter.com/mdo">@mdo</a>
+                &emsp;○&emsp;
+                <a href="https://github.com/jiverson002/efika-stat">
+                <img src="https://icon-library.com/images/github-icon-white/github-icon-white-6.jpg" style="height: 30px;width: 30px;">
+                Visit Our GitHub Repository
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    <!-- JavaScript Files Here -->
+    <!--TODO: find a way to include reactiveChart.js from app.js-->
+    <script src="JavaScript/reactiveChart.js"></script>
+    <script src="JavaScript/app.js"></script>
+  </body>
 </html>
